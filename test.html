@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>宝宝未来职业潜力测试 - 答题中</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="test-container">
+        <!-- 进度条 -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text" id="progressText">第1题/共15题</div>
+
+  
+        <!-- 题目卡片 -->
+        <div class="question-card fade-in" id="questionCard">
+            <div class="question-number" id="questionNumber">题目 1</div>
+            <div class="question-text" id="questionText"></div>
+            <div class="question-hint" id="questionHint"></div>
+
+            <!-- 选项列表 -->
+            <div class="options-list" id="optionsList"></div>
+        </div>
+
+        <!-- 导航按钮 -->
+        <div class="navigation">
+            <button class="nav-btn" id="prevBtn" onclick="previousQuestion()">
+                <span>← 上一题</span>
+            </button>
+            <button class="nav-btn primary" id="nextBtn" onclick="nextQuestion()">
+                <span>下一题 →</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 加载提示 -->
+    <div id="loadingOverlay">
+        <div style="text-align: center;">
+            <div class="loading"></div>
+            <p>正在生成测试报告...</p>
+        </div>
+    </div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/quiz.js"></script>
+</body>
+</html>

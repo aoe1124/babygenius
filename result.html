@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>宝宝未来职业潜力测试 - 结果</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="result-container fade-in">
+            <!-- 结果头部 -->
+            <div class="result-header">
+                <div class="result-emoji" id="resultEmoji">🎨</div>
+                <h1 class="result-title">🎉 <span id="babyName"></span>是...</h1>
+                <div class="result-subtitle" id="mainPotential">小小艺术家</div>
+            </div>
+
+            <!-- 天赋特质 -->
+            <div class="result-section">
+                <h2 class="section-title">
+                    <span>💡</span>
+                    <span>Ta的天赋特质</span>
+                </h2>
+                <p id="talentDescription" class="section-content"></p>
+            </div>
+
+            <!-- 潜能分布图 -->
+            <div class="result-section">
+                <h2 class="section-title">
+                    <span>📊</span>
+                    <span>潜能分布图</span>
+                </h2>
+                <div class="chart-container">
+                    <canvas id="potentialChart"></canvas>
+                </div>
+            </div>
+
+            <!-- 未来职业方向 -->
+            <div class="result-section">
+                <h2 class="section-title">
+                    <span>🎓</span>
+                    <span>未来可能的职业方向</span>
+                </h2>
+                <div class="career-list" id="careerList"></div>
+            </div>
+
+            <!-- 培养建议 -->
+            <div class="result-section">
+                <h2 class="section-title">
+                    <span>🏠</span>
+                    <span>给妈妈的3个培养建议</span>
+                </h2>
+                <ul class="suggestion-list" id="suggestionList"></ul>
+            </div>
+
+            <!-- 潜在天赋 -->
+            <div class="result-section" id="potentialTalentSection" style="display: none;">
+                <h2 class="section-title">
+                    <span>🌟</span>
+                    <span>潜在天赋</span>
+                </h2>
+                <div id="potentialTalentList"></div>
+            </div>
+
+            <!-- 温馨提示 -->
+            <div class="result-section">
+                <h2 class="section-title">
+                    <span>💝</span>
+                    <span>温馨提示</span>
+                </h2>
+                <p class="section-content">
+                    宝宝的天赋会随成长不断变化，<br>
+                    建议6个月后再测一次哦~
+                </p>
+            </div>
+
+            <!-- 操作按钮 -->
+            <div class="action-buttons">
+                <button class="action-btn primary" onclick="saveAsPDF()">
+                    <span>📄</span>
+                    <span>保存报告</span>
+                </button>
+                <button class="action-btn secondary" onclick="retakeTest()">
+                    <span>🔄</span>
+                    <span>再测一次</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载提示 -->
+    <div id="loadingOverlay">
+        <div style="text-align: center;">
+            <div class="loading"></div>
+            <p>正在生成PDF报告...</p>
+        </div>
+    </div>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/result.js"></script>
+</body>
+</html>
