@@ -789,12 +789,23 @@ input[type="text"]:focus {
 }
 
 /* 结果页面样式 */
+body.result-page .container {
+    max-width: 900px;
+}
+
 .result-container {
     background: var(--card-bg);
     border-radius: var(--border-radius-lg);
-    padding: var(--spacing-xl);
+    padding: 2rem;
     box-shadow: var(--shadow-heavy);
     margin-bottom: var(--spacing-lg);
+}
+
+.result-section {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 182, 193, 0.1);
+    border-radius: var(--border-radius-md);
 }
 
 .result-header {
@@ -828,12 +839,6 @@ input[type="text"]:focus {
     animation: bounce 2s infinite;
 }
 
-.result-section {
-    margin-bottom: var(--spacing-xl);
-    padding: var(--spacing-md);
-    background: rgba(255, 182, 193, 0.1);
-    border-radius: var(--border-radius-md);
-}
 
 .section-title {
     font-weight: bold;
@@ -927,6 +932,20 @@ input[type="text"]:focus {
 @media (max-width: 480px) {
     .container {
         padding: var(--spacing-sm);
+    }
+
+    body.result-page .container {
+        max-width: 100%;
+        padding: var(--spacing-sm);
+    }
+
+    .result-container {
+        padding: 1.5rem;
+    }
+
+    .result-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
     }
 
     .content-wrapper {
