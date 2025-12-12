@@ -28,14 +28,18 @@ document.addEventListener('DOMContentLoaded', async function() {
     testInfo = JSON.parse(savedTestInfo);
 
     // Load questions from data.js
-    questions = questionsData.questions;
-
-    // Load saved answers if exist
-    const savedAnswers = localStorage.getItem('babyTestAnswers');
-    if (savedAnswers) {
-        answers = JSON.parse(savedAnswers);
-        currentQuestionIndex = answers.length;
+    if (typeof questionsData !== 'undefined' && questionsData.questions) {
+        questions = questionsData.questions;
+        console.log('Loaded', questions.length, 'questions');
+    } else {
+        console.error('Questions data not loaded!');
+        return;
     }
+
+    // Clear any old test data when starting fresh
+    localStorage.removeItem('babyTestAnswers');
+    answers = [];
+    currentQuestionIndex = 0;
 
     // Display current question
     displayQuestion();

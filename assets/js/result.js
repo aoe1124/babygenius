@@ -55,8 +55,13 @@ function processResults() {
 
 // Display results
 function displayResults() {
-    // Baby name
-    document.getElementById('babyName').textContent = results.testInfo.babyName || '宝宝';
+    // Baby name text
+    const babyName = results.testInfo.babyName || '宝宝';
+    if (babyName === '宝宝') {
+        document.getElementById('babyNameText').textContent = '您的宝宝';
+    } else {
+        document.getElementById('babyNameText').textContent = `您的宝宝${babyName}`;
+    }
 
     // Main potential
     const mainType = results.sortedTypes[0];
@@ -127,12 +132,14 @@ function createChart() {
                 pointBackgroundColor: 'rgba(255, 105, 180, 1)',
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgba(255, 105, 180, 1)'
+                pointHoverBorderColor: 'rgba(255, 105, 180, 1)',
+                pointRadius: 5,
+                pointHoverRadius: 7
             }]
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             scales: {
                 r: {
                     beginAtZero: true,

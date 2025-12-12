@@ -814,23 +814,24 @@ body.result-page .container {
 }
 
 .page-title {
-    font-size: 2rem;
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-lg);
-    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-weight: normal;
 }
 
 .potential-intro {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
+    font-size: 1.2rem;
+    color: var(--text-primary);
     margin-bottom: var(--spacing-sm);
 }
 
 .main-potential {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: var(--primary-color);
-    font-weight: bold;
+    font-weight: 900;
     margin-bottom: var(--spacing-lg);
+    letter-spacing: 1px;
 }
 
 .result-emoji {
@@ -850,25 +851,41 @@ body.result-page .container {
 }
 
 .chart-container {
-    max-width: 400px;
+    width: 100%;
+    max-width: 500px;
     margin: 0 auto;
     padding: var(--spacing-md);
+    position: relative;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px;
 }
 
 .career-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--spacing-sm);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     margin-top: var(--spacing-sm);
 }
 
 .career-item {
-    background: white;
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius-sm);
-    text-align: center;
-    color: var(--text-secondary);
-    box-shadow: var(--shadow-light);
+    display: inline-block;
+    background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(255, 105, 180, 0.3);
+    transition: all 0.3s ease;
+}
+
+.career-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.4);
 }
 
 .suggestion-list {
@@ -948,6 +965,14 @@ body.result-page .container {
         margin-bottom: 1rem;
     }
 
+    .chart-container {
+        padding: 0.5rem;
+    }
+
+    .chart-container canvas {
+        max-height: 350px;
+    }
+
     .content-wrapper {
         padding: var(--spacing-lg);
     }
@@ -1016,8 +1041,9 @@ body.result-page .container {
         width: 100%;
     }
 
-    .career-list {
-        grid-template-columns: 1fr;
+    .career-item {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
 
     .action-buttons {
