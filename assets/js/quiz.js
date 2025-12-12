@@ -50,6 +50,13 @@ function displayQuestion() {
         return;
     }
 
+    // Scroll to top when displaying new question
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+
     const question = questions[currentQuestionIndex];
 
     // Update question number and text
